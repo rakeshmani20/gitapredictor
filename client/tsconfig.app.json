@@ -13,7 +13,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
+    "outDir": "./dist",
     "jsx": "react-jsx",
 
     /* Linting */
@@ -27,7 +27,8 @@
     "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
