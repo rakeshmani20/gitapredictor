@@ -1,0 +1,374 @@
+.results-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+}
+
+.results-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.traits-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.trait-item {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1.5rem;
+}
+
+.trait-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.trait-percentage {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #4a5568;
+}
+
+.trait-bar {
+  height: 8px;
+  background: #edf2f7;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.trait-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #4c51bf, #6b46c1);
+  border-radius: 4px;
+  transition: width 0.5s ease-out;
+}
+
+.trait-description {
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.results-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.results-actions button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.results-actions button:first-child {
+  background: #4c51bf;
+  color: white;
+}
+
+.results-actions button:last-child {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.results-actions button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-content {
+  text-align: center;
+  padding: 2rem 0 0.5rem;
+}
+
+.result-heading {
+  font-size: 1.5rem;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.character-name-container {
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 1rem 0;
+}
+
+.character-name {
+  font-size: 3rem;
+  color: #2d3748;
+  margin: 0;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #4c51bf, #6b46c1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.personality-traits {
+  margin-top: 1rem;
+  text-align: left;
+  padding: 0 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+.personality-trait {
+  margin-bottom: 0;
+  background: rgba(76, 81, 191, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.trait-emoji {
+  font-size: 1.75rem;
+  margin-right: 0.75rem;
+  vertical-align: middle;
+}
+
+.trait-label {
+  font-weight: bold;
+  color: #4c51bf;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.1rem;
+}
+
+.trait-text {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.results-error {
+  text-align: center;
+  padding: 2rem;
+}
+
+.results-error button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #4c51bf;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.blurred-content {
+  filter: blur(15px);
+  opacity: 0.5;
+  user-select: none;
+  pointer-events: none;
+  min-width: 300px;
+  padding: 1rem;
+}
+
+.reveal-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem 3rem;
+  background: #4c51bf;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  min-width: 200px;
+}
+
+.reveal-button:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #434190;
+}
+
+.user-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.user-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.user-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0 0.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.user-form input.error {
+  border-color: #e53e3e;
+  background-color: #fff5f5;
+}
+
+.error-message {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.user-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #4c51bf;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.user-form button:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.user-form button:not(:disabled):hover {
+  background: #434190;
+}
+
+.user-form h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #2d3748;
+  text-align: center;
+}
+
+.navigation-buttons {
+  padding: 0 2rem;
+}
+
+.nav-button {
+  width: 100%;
+  padding: 1rem;
+  background: #4c51bf;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 1rem;
+}
+
+.nav-button:hover {
+  background: #434190;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional responsive adjustments */
+@media screen and (max-width: 768px) {
+  .results-container {
+    margin: 1rem auto;
+  }
+
+  .character-name {
+    font-size: clamp(2rem, 8vw, 3rem);
+    padding: 0.5rem 1rem;
+  }
+
+  .personality-traits {
+    padding: 0 1rem;
+  }
+
+  .trait-text {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .results-card {
+    padding: 1rem;
+  }
+
+  .trait-emoji {
+    font-size: 1.5rem;
+  }
+
+  .trait-label {
+    font-size: 1rem;
+  }
+
+  .reveal-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    min-width: 160px;
+  }
+}
+
+/* Ensure proper display on ultra-wide screens */
+@media screen and (min-width: 1400px) {
+  .results-container {
+    max-width: 1000px;
+  }
+} 

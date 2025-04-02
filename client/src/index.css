@@ -1,0 +1,132 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/font/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/font/Inter-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/font/Inter-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+:root {
+  --primary: #000000;
+  --text: #1A1A1A;
+  --background: #89A7C6;
+  --accent: #FFFFFF;
+  --gradient-start: #89A7C6;
+  --gradient-end: #A5BEDA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--accent);
+  overflow-x: hidden;
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: linear-gradient(180deg, var(--gradient-start), var(--gradient-end));
+  z-index: -1;
+}
+
+.hero-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4vh 4vw;
+  position: relative;
+  text-align: center;
+  gap: 4vh;
+}
+
+.hero-content {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}
+
+.hero-button {
+  background: #000000;
+  color: var(--accent);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+  background: #222222;
+}
+
+.hero-image {
+  width: 85%;
+  max-width: 1000px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  background: white;
+  padding: 1.5rem;
+  margin-top: -2vh;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 3vh 2vw;
+    gap: 2vh;
+  }
+
+  .hero-content {
+    gap: 1.5rem;
+  }
+
+  .hero-image {
+    width: 95%;
+    padding: 1rem;
+    margin-top: 0;
+  }
+}
+
