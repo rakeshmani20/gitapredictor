@@ -73,7 +73,7 @@ const personalityData: { [key: string]: GitaPersonality } = {
     strengths: "Logical, diplomatic, truthful.",
     weaknesses: "Avoids confrontation, often underappreciated."
   },
-  Dronacharya: {
+  Drona: {
     personality: "You are a teacher and leader, passing down knowledge and discipline.",
     strengths: "Intelligent, respected, skilled.",
     weaknesses: "Biased, can be too rigid in discipline."
@@ -212,7 +212,7 @@ const Results: React.FC = () => {
       'Teacher': {
         'Yes': {
           'Same': {
-            'Sep-Oct (Balanced)': 'Dronacharya'
+            'Sep-Oct (Balanced)': 'Drona'
           },
           'Moved': {
             'Nov-Dec (Intense)': 'Krishna'
@@ -396,7 +396,7 @@ const Results: React.FC = () => {
         </div>
         
         <div className="result-content">
-          <h2 className="result-heading">Your Bhagavad Gita personality is:</h2>
+          <h2 className="result-heading">Your Bhagavad Gita personality:</h2>
           <div className="character-name-container">
             <div className={!isRevealed ? 'blurred-content' : ''}>
               <h1 className="character-name">{character}</h1>
