@@ -78,6 +78,16 @@ const personalityData: { [key: string]: GitaPersonality } = {
     strengths: "Intelligent, respected, skilled.",
     weaknesses: "Biased, can be too rigid in discipline."
   },
+  Dronacharya: {
+    personality: "You are a mentor and authority figure, sharing wisdom while maintaining high standards.",
+    strengths: "Masterful teacher, respected, principled.",
+    weaknesses: "Can be rigid, struggles with changing traditions."
+  },
+  Vashishta: {
+    personality: "You are spiritual and wise, expanding knowledge beyond conventional boundaries.",
+    strengths: "Deeply knowledgeable, calm, spiritually enlightened.",
+    weaknesses: "May be too idealistic, sometimes disconnected from practical realities."
+  },
   Kunti: {
     personality: "You are nurturing and wise, balancing love with strategic thinking.",
     strengths: "Strong-willed, patient, resilient.",
@@ -164,7 +174,7 @@ const Results: React.FC = () => {
     // Get month modifier
     const monthMod = getMonthModifier(data.birthMonth);
 
-    // Character mapping based on Gita Table
+    // Updated Character mapping based on Gita Table.md
     const characterMap: CharacterMapType = {
       'Business': {
         'Yes': {
@@ -177,16 +187,29 @@ const Results: React.FC = () => {
             'Nov-Dec (Intense)': 'Karna'
           },
           'Moved': {
+            'Jan-Feb (Disciplined)': 'Bhishma',
+            'Mar-Apr (Fiery)': 'Duryodhana',
             'May-Jun (Smart)': 'Krishna',
             'Jul-Aug (Emotional)': 'Karna',
+            'Sep-Oct (Balanced)': 'Yudhishthira',
             'Nov-Dec (Intense)': 'Karna'
           }
         },
         'No': {
           'Same': {
-            'Sep-Oct (Balanced)': 'Yudhishthira'
+            'Jan-Feb (Disciplined)': 'Yudhishthira',
+            'Mar-Apr (Fiery)': 'Yudhishthira',
+            'May-Jun (Smart)': 'Yudhishthira',
+            'Jul-Aug (Emotional)': 'Yudhishthira',
+            'Sep-Oct (Balanced)': 'Yudhishthira',
+            'Nov-Dec (Intense)': 'Yudhishthira'
           },
           'Moved': {
+            'Jan-Feb (Disciplined)': 'Karna',
+            'Mar-Apr (Fiery)': 'Karna',
+            'May-Jun (Smart)': 'Karna',
+            'Jul-Aug (Emotional)': 'Karna',
+            'Sep-Oct (Balanced)': 'Karna',
             'Nov-Dec (Intense)': 'Karna'
           }
         }
@@ -194,53 +217,113 @@ const Results: React.FC = () => {
       'Govt Service': {
         'Yes': {
           'Same': {
-            'Jan-Feb (Disciplined)': 'Bhishma'
+            'Jan-Feb (Disciplined)': 'Bhishma',
+            'Mar-Apr (Fiery)': 'Bhishma',
+            'May-Jun (Smart)': 'Bhishma',
+            'Jul-Aug (Emotional)': 'Bhishma',
+            'Sep-Oct (Balanced)': 'Bhishma',
+            'Nov-Dec (Intense)': 'Bhishma'
           },
           'Moved': {
-            'Mar-Apr (Fiery)': 'Karna'
+            'Jan-Feb (Disciplined)': 'Karna',
+            'Mar-Apr (Fiery)': 'Karna',
+            'May-Jun (Smart)': 'Karna',
+            'Jul-Aug (Emotional)': 'Karna',
+            'Sep-Oct (Balanced)': 'Karna',
+            'Nov-Dec (Intense)': 'Karna'
           }
         },
         'No': {
           'Same': {
-            'May-Jun (Smart)': 'Vidura'
+            'Jan-Feb (Disciplined)': 'Vidura',
+            'Mar-Apr (Fiery)': 'Vidura',
+            'May-Jun (Smart)': 'Vidura',
+            'Jul-Aug (Emotional)': 'Vidura',
+            'Sep-Oct (Balanced)': 'Vidura',
+            'Nov-Dec (Intense)': 'Vidura'
           },
           'Moved': {
-            'Jul-Aug (Emotional)': 'Drona'
+            'Jan-Feb (Disciplined)': 'Drona',
+            'Mar-Apr (Fiery)': 'Drona',
+            'May-Jun (Smart)': 'Drona',
+            'Jul-Aug (Emotional)': 'Drona',
+            'Sep-Oct (Balanced)': 'Drona',
+            'Nov-Dec (Intense)': 'Drona'
           }
         }
       },
       'Teacher': {
         'Yes': {
           'Same': {
-            'Sep-Oct (Balanced)': 'Drona'
+            'Jan-Feb (Disciplined)': 'Dronacharya',
+            'Mar-Apr (Fiery)': 'Dronacharya',
+            'May-Jun (Smart)': 'Dronacharya',
+            'Jul-Aug (Emotional)': 'Dronacharya',
+            'Sep-Oct (Balanced)': 'Dronacharya',
+            'Nov-Dec (Intense)': 'Dronacharya'
           },
           'Moved': {
+            'Jan-Feb (Disciplined)': 'Krishna',
+            'Mar-Apr (Fiery)': 'Krishna',
+            'May-Jun (Smart)': 'Krishna',
+            'Jul-Aug (Emotional)': 'Krishna',
+            'Sep-Oct (Balanced)': 'Krishna',
             'Nov-Dec (Intense)': 'Krishna'
           }
         },
         'No': {
           'Same': {
-            'Jan-Feb (Disciplined)': 'Vidura'
+            'Jan-Feb (Disciplined)': 'Vidura',
+            'Mar-Apr (Fiery)': 'Vidura',
+            'May-Jun (Smart)': 'Vidura',
+            'Jul-Aug (Emotional)': 'Vidura',
+            'Sep-Oct (Balanced)': 'Vidura',
+            'Nov-Dec (Intense)': 'Vidura'
           },
           'Moved': {
-            'Mar-Apr (Fiery)': 'Parashurama'
+            'Jan-Feb (Disciplined)': 'Vashishta',
+            'Mar-Apr (Fiery)': 'Vashishta',
+            'May-Jun (Smart)': 'Vashishta',
+            'Jul-Aug (Emotional)': 'Vashishta',
+            'Sep-Oct (Balanced)': 'Vashishta',
+            'Nov-Dec (Intense)': 'Vashishta'
           }
         }
       },
       'IT/Engineer': {
         'Yes': {
           'Same': {
-            'May-Jun (Smart)': 'Arjuna'
+            'Jan-Feb (Disciplined)': 'Arjuna',
+            'Mar-Apr (Fiery)': 'Arjuna',
+            'May-Jun (Smart)': 'Arjuna',
+            'Jul-Aug (Emotional)': 'Arjuna',
+            'Sep-Oct (Balanced)': 'Arjuna',
+            'Nov-Dec (Intense)': 'Arjuna'
           },
           'Moved': {
-            'Jul-Aug (Emotional)': 'Karna'
+            'Jan-Feb (Disciplined)': 'Karna',
+            'Mar-Apr (Fiery)': 'Karna',
+            'May-Jun (Smart)': 'Karna',
+            'Jul-Aug (Emotional)': 'Karna',
+            'Sep-Oct (Balanced)': 'Karna',
+            'Nov-Dec (Intense)': 'Karna'
           }
         },
         'No': {
           'Same': {
-            'Sep-Oct (Balanced)': 'Nakula'
+            'Jan-Feb (Disciplined)': 'Nakula',
+            'Mar-Apr (Fiery)': 'Nakula',
+            'May-Jun (Smart)': 'Nakula',
+            'Jul-Aug (Emotional)': 'Nakula',
+            'Sep-Oct (Balanced)': 'Nakula',
+            'Nov-Dec (Intense)': 'Nakula'
           },
           'Moved': {
+            'Jan-Feb (Disciplined)': 'Sahadeva',
+            'Mar-Apr (Fiery)': 'Sahadeva',
+            'May-Jun (Smart)': 'Sahadeva',
+            'Jul-Aug (Emotional)': 'Sahadeva',
+            'Sep-Oct (Balanced)': 'Sahadeva',
             'Nov-Dec (Intense)': 'Sahadeva'
           }
         }
@@ -248,53 +331,113 @@ const Results: React.FC = () => {
       'Healthcare': {
         'Yes': {
           'Same': {
-            'Jan-Feb (Disciplined)': 'Bhishma'
+            'Jan-Feb (Disciplined)': 'Bhishma',
+            'Mar-Apr (Fiery)': 'Bhishma',
+            'May-Jun (Smart)': 'Bhishma',
+            'Jul-Aug (Emotional)': 'Bhishma',
+            'Sep-Oct (Balanced)': 'Bhishma',
+            'Nov-Dec (Intense)': 'Bhishma'
           },
           'Moved': {
-            'Mar-Apr (Fiery)': 'Karna'
+            'Jan-Feb (Disciplined)': 'Karna',
+            'Mar-Apr (Fiery)': 'Karna',
+            'May-Jun (Smart)': 'Karna',
+            'Jul-Aug (Emotional)': 'Karna',
+            'Sep-Oct (Balanced)': 'Karna',
+            'Nov-Dec (Intense)': 'Karna'
           }
         },
         'No': {
           'Same': {
-            'May-Jun (Smart)': 'Kunti'
+            'Jan-Feb (Disciplined)': 'Kunti',
+            'Mar-Apr (Fiery)': 'Kunti',
+            'May-Jun (Smart)': 'Kunti',
+            'Jul-Aug (Emotional)': 'Kunti',
+            'Sep-Oct (Balanced)': 'Kunti',
+            'Nov-Dec (Intense)': 'Kunti'
           },
           'Moved': {
-            'Jul-Aug (Emotional)': 'Ashwatthama'
+            'Jan-Feb (Disciplined)': 'Ashwatthama',
+            'Mar-Apr (Fiery)': 'Ashwatthama',
+            'May-Jun (Smart)': 'Ashwatthama',
+            'Jul-Aug (Emotional)': 'Ashwatthama',
+            'Sep-Oct (Balanced)': 'Ashwatthama',
+            'Nov-Dec (Intense)': 'Ashwatthama'
           }
         }
       },
       'Housewife': {
         'Yes': {
           'Same': {
-            'Sep-Oct (Balanced)': 'Kunti'
+            'Jan-Feb (Disciplined)': 'Kunti',
+            'Mar-Apr (Fiery)': 'Kunti',
+            'May-Jun (Smart)': 'Kunti',
+            'Jul-Aug (Emotional)': 'Kunti',
+            'Sep-Oct (Balanced)': 'Kunti',
+            'Nov-Dec (Intense)': 'Kunti'
           },
           'Moved': {
+            'Jan-Feb (Disciplined)': 'Draupadi',
+            'Mar-Apr (Fiery)': 'Draupadi',
+            'May-Jun (Smart)': 'Draupadi',
+            'Jul-Aug (Emotional)': 'Draupadi',
+            'Sep-Oct (Balanced)': 'Draupadi',
             'Nov-Dec (Intense)': 'Draupadi'
           }
         },
         'No': {
           'Same': {
-            'Jan-Feb (Disciplined)': 'Subhadra'
+            'Jan-Feb (Disciplined)': 'Subhadra',
+            'Mar-Apr (Fiery)': 'Subhadra',
+            'May-Jun (Smart)': 'Subhadra',
+            'Jul-Aug (Emotional)': 'Subhadra',
+            'Sep-Oct (Balanced)': 'Subhadra',
+            'Nov-Dec (Intense)': 'Subhadra'
           },
           'Moved': {
-            'Mar-Apr (Fiery)': 'Gandhari'
+            'Jan-Feb (Disciplined)': 'Gandhari',
+            'Mar-Apr (Fiery)': 'Gandhari',
+            'May-Jun (Smart)': 'Gandhari',
+            'Jul-Aug (Emotional)': 'Gandhari',
+            'Sep-Oct (Balanced)': 'Gandhari',
+            'Nov-Dec (Intense)': 'Gandhari'
           }
         }
       },
       'Other': {
         'Yes': {
           'Same': {
-            'May-Jun (Smart)': 'Narada'
+            'Jan-Feb (Disciplined)': 'Narada',
+            'Mar-Apr (Fiery)': 'Narada',
+            'May-Jun (Smart)': 'Narada',
+            'Jul-Aug (Emotional)': 'Narada',
+            'Sep-Oct (Balanced)': 'Narada',
+            'Nov-Dec (Intense)': 'Narada'
           },
           'Moved': {
-            'Jul-Aug (Emotional)': 'Narada'
+            'Jan-Feb (Disciplined)': 'Narada',
+            'Mar-Apr (Fiery)': 'Narada',
+            'May-Jun (Smart)': 'Narada',
+            'Jul-Aug (Emotional)': 'Narada',
+            'Sep-Oct (Balanced)': 'Narada',
+            'Nov-Dec (Intense)': 'Narada'
           }
         },
         'No': {
           'Same': {
-            'Sep-Oct (Balanced)': 'Vidura'
+            'Jan-Feb (Disciplined)': 'Vidura',
+            'Mar-Apr (Fiery)': 'Vidura',
+            'May-Jun (Smart)': 'Vidura',
+            'Jul-Aug (Emotional)': 'Vidura',
+            'Sep-Oct (Balanced)': 'Vidura',
+            'Nov-Dec (Intense)': 'Vidura'
           },
           'Moved': {
+            'Jan-Feb (Disciplined)': 'Parashurama',
+            'Mar-Apr (Fiery)': 'Parashurama',
+            'May-Jun (Smart)': 'Parashurama',
+            'Jul-Aug (Emotional)': 'Parashurama',
+            'Sep-Oct (Balanced)': 'Parashurama',
             'Nov-Dec (Intense)': 'Parashurama'
           }
         }
@@ -303,11 +446,11 @@ const Results: React.FC = () => {
 
     try {
       if (!workType || !data.isMainEarner || !locationStatus || !monthMod) {
-        return 'Arjuna';
+        return 'Arjuna'; // Default fallback
       }
       return characterMap[workType]?.[data.isMainEarner]?.[locationStatus]?.[monthMod] || 'Arjuna';
     } catch {
-      return 'Arjuna';
+      return 'Arjuna'; // Error fallback
     }
   };
 
