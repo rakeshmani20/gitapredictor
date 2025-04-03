@@ -386,12 +386,12 @@ const Results: React.FC = () => {
         <h1 className="quiz-title">Gita Quiz</h1>
       </div>
 
-      <div className="quiz-card" style={{ position: 'relative' }}>
+      <div className={`quiz-card ${!isRevealed ? 'not-revealed' : ''}`} style={{ position: 'relative' }}>
         <div className="question-image-container">
           <img 
             src="/GitaImages/Result.png" 
             alt="Bhagavad Gita Result" 
-            className="question-image"
+            className={`question-image ${!isRevealed ? 'blurred-content' : ''}`}
           />
         </div>
         

@@ -199,6 +199,20 @@
   pointer-events: none;
   min-width: 300px;
   padding: 1rem;
+  transition: filter 0.8s ease, opacity 0.8s ease;
+}
+
+/* Specific styling for the blurred question image */
+.question-image.blurred-content {
+  filter: blur(10px);
+  opacity: 0.7;
+  transition: filter 0.8s ease, opacity 0.8s ease, transform 0.8s ease;
+  transform: scale(1.05);
+}
+
+.question-image {
+  transition: filter 0.8s ease, opacity 0.8s ease, transform 0.8s ease;
+  transform: scale(1);
 }
 
 .reveal-button {
@@ -418,6 +432,39 @@
   display: flex;
   flex-direction: column;
   min-height: 70vh;
+}
+
+/* Styles for the image container in Results page */
+.quiz-card .question-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f0f2f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.quiz-card .question-image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.05);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+/* Replace :has() with a class-based approach */
+.quiz-card .question-image-container:has(.blurred-content)::after {
+  opacity: 1;
+}
+
+/* Add this for browsers that don't support :has() */
+.not-revealed .question-image-container::after {
+  opacity: 1;
 }
 
 .user-form-overlay ~ .navigation-buttons {
