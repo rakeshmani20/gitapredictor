@@ -419,7 +419,12 @@ const Results: React.FC = () => {
         </div>
 
         {showUserForm && (
-          <div className="user-form-overlay">
+          <div className="user-form-overlay" onClick={(e) => {
+            // Close the form if clicking outside the form area
+            if ((e.target as HTMLElement).className === 'user-form-overlay') {
+              setShowUserForm(false);
+            }
+          }}>
             <form className="user-form" onSubmit={handleUserFormSubmit}>
               <h3>Enter Your Details to Reveal</h3>
               <div className="form-group">
@@ -455,12 +460,14 @@ const Results: React.FC = () => {
         )}
 
         <div className="navigation-buttons">
-          <button 
-            className="nav-button"
-            onClick={() => navigate('/')}
-          >
-            Share
-          </button>
+          {!showUserForm && (
+            <button 
+              className="nav-button"
+              onClick={() => navigate('/')}
+            >
+              Share
+            </button>
+          )}
         </div>
       </div>
     </div>
