@@ -174,11 +174,13 @@ const Quiz: React.FC = () => {
               <div className="pincode-input">
                 <h2 className="question-text">Where were you born? (Enter Pincode)</h2>
                 <input
-                  type="text"
-                  maxLength={6}
+                  type="number"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   value={formData.birthPincode || ''}
                   onChange={(e) => {
-                    const value = e.target.value.replace(/\D/g, '');
+                    // Limit to 6 digits and remove non-digits
+                    const value = e.target.value.replace(/\D/g, '').slice(0, 6);
                     setFormData({ ...formData, birthPincode: value });
                   }}
                   className="pincode-field"
@@ -192,11 +194,13 @@ const Quiz: React.FC = () => {
               <div className="pincode-input">
                 <h2 className="question-text">Where are you working now? (Enter Pincode)</h2>
                 <input
-                  type="text"
-                  maxLength={6}
+                  type="number"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   value={formData.workPincode || ''}
                   onChange={(e) => {
-                    const value = e.target.value.replace(/\D/g, '');
+                    // Limit to 6 digits and remove non-digits
+                    const value = e.target.value.replace(/\D/g, '').slice(0, 6);
                     setFormData({ ...formData, workPincode: value });
                   }}
                   className="pincode-field"
