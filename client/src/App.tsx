@@ -10,17 +10,12 @@ function Home() {
     <main className="hero-container">
       <div className="hero-content">
         <h1 className="hero-title">
-          Which Bhagavad Gita quote matches your personality?
+          Which Bhagavad Gita character are you?
         </h1>
         <button className="hero-button" onClick={() => navigate('/quiz')}>
-          Find out now!
+          Reveal now!
         </button>
       </div>
-      <img 
-        src="/gitaheader.png"
-        alt="Krishna and Arjuna in chariot" 
-        className="hero-image"
-      />
     </main>
   )
 }
