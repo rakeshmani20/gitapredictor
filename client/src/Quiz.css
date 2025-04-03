@@ -3,6 +3,10 @@
   width: 95%;
   margin: 20px auto;
   padding: 20px;
+  max-height: 100vh;
+  overflow-y: auto; /* Enable scrolling when needed */
+  display: flex;
+  flex-direction: column;
 }
 
 .quiz-header {
@@ -32,9 +36,19 @@
   background: white;
   border-radius: 15px;
   padding: clamp(15px, 4vw, 25px);
-  padding-bottom: clamp(30px, 6vw, 50px);
+  padding-bottom: clamp(80px, 8vw, 100px); /* Increased bottom padding */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
+  position: relative; /* For absolute positioning context */
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh; /* Ensure minimum height */
+}
+
+.quiz-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 20px; /* Space for the navigation buttons */
 }
 
 .question-header {
@@ -82,6 +96,10 @@
   flex-direction: column;
   gap: 15px;
   width: 100%;
+  max-height: 50vh;
+  overflow-y: auto; /* Allow scrolling for many options */
+  padding-right: 5px; /* Space for scrollbar */
+  margin-bottom: 20px; /* Space after options */
 }
 
 .option-button {
@@ -120,6 +138,13 @@
   margin-top: 25px;
   gap: 15px;
   flex-wrap: wrap;
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 10;
+  width: 100%;
 }
 
 .nav-button {
@@ -205,10 +230,18 @@
   .quiz-container {
     margin: 10px auto;
     padding: 10px;
+    height: 100vh;
+    overflow-y: auto;
   }
 
   .navigation-buttons {
     flex-direction: column;
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 10px 0;
+    z-index: 100;
+    margin-top: auto; /* Push to bottom */
   }
 
   .nav-button {
@@ -231,14 +264,29 @@
   .quiz-container {
     width: 100%;
     margin: 10px 0;
+    max-height: 100vh;
+    overflow-y: auto; /* Add scrolling capability */
+    padding-bottom: 20px; /* Add bottom padding */
   }
 
   .quiz-card {
     padding: clamp(10px, 3vw, 20px);
+    padding-bottom: clamp(70px, 7vw, 90px); /* Increased for mobile */
+    display: flex;
+    flex-direction: column;
   }
 
   .question-text {
     font-size: clamp(14px, 3vw, 18px);
+  }
+  
+  .navigation-buttons {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 10px 0;
+    z-index: 100;
+    margin-top: auto; /* Push to bottom */
   }
 }
 

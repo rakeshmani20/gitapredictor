@@ -227,7 +227,9 @@ const Quiz: React.FC = () => {
           <span className="question-number">Page: {currentPage}/{totalPages}</span>
         </div>
 
-        {renderQuestion()}
+        <div className="quiz-content">
+          {renderQuestion()}
+        </div>
 
         <div className="navigation-buttons">
           {currentPage !== 1 && (
