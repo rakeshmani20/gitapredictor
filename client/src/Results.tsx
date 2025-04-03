@@ -389,8 +389,8 @@ const Results: React.FC = () => {
       <div className="quiz-card" style={{ position: 'relative' }}>
         <div className="question-image-container">
           <img 
-            src="/gita1.png" 
-            alt="Bhagavad Gita" 
+            src="/GitaImages/Result.png" 
+            alt="Bhagavad Gita Result" 
             className="question-image"
           />
         </div>

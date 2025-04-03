@@ -53,7 +53,7 @@ body {
 
 .hero-title {
   /* Increased font size range */
-  font-size: clamp(3rem, 12vw, 12rem); 
+  font-size: clamp(3rem, 8vw, 5rem); 
   color: white;
   margin-bottom: 3rem; /* Slightly increase margin too */
   line-height: 1.3;

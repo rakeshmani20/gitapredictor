@@ -81,21 +81,24 @@ const Quiz: React.FC = () => {
   };
 
   const renderQuestion = () => {
-    const questionImage = (
-      <div className="question-image-container">
-        <img 
-          src="/gita1.png" 
-          alt="Bhagavad Gita" 
-          className="question-image"
-        />
-      </div>
-    );
+    // Function to get the appropriate image for the current page
+    const getQuestionImage = (page: number) => {
+      return (
+        <div className="question-image-container">
+          <img 
+            src={`/GitaImages/Question${page}.png`} 
+            alt={`Question ${page}`} 
+            className="question-image"
+          />
+        </div>
+      );
+    };
 
     switch (currentPage) {
       case 1:
         return (
           <>
-            {questionImage}
+            {getQuestionImage(1)}
             <h2 className="question-text">What is your nature of work?</h2>
             <div className="options-container">
               {workOptions.map((option) => (
@@ -114,7 +117,7 @@ const Quiz: React.FC = () => {
       case 2:
         return (
           <>
-            {questionImage}
+            {getQuestionImage(2)}
             <h2 className="question-text">Are you the main earning member of your family?</h2>
             <div className="options-container">
               {['Yes', 'No'].map((option) => (
@@ -133,7 +136,7 @@ const Quiz: React.FC = () => {
       case 3:
         return (
           <>
-            {questionImage}
+            {getQuestionImage(3)}
             <div className="birth-details">
               <div className="birth-year">
                 <h2 className="question-text">What is your year of birth?</h2>
@@ -171,7 +174,7 @@ const Quiz: React.FC = () => {
       case 4:
         return (
           <>
-            {questionImage}
+            {getQuestionImage(4)}
             <div className="pincode-container">
               <div className="pincode-input">
                 <h2 className="question-text">Where were you born? (Enter Pincode)</h2>
