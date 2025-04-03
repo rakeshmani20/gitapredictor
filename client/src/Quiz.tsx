@@ -141,6 +141,7 @@ const Quiz: React.FC = () => {
                   value={formData.birthYear || ''}
                   onChange={(e) => setFormData({ ...formData, birthYear: e.target.value })}
                   className="date-picker"
+                  aria-label="Select birth year"
                 >
                   <option value="">Select Year</option>
                   {yearOptions.map((year) => (
@@ -155,6 +156,7 @@ const Quiz: React.FC = () => {
                   value={formData.birthMonth || ''}
                   onChange={(e) => setFormData({ ...formData, birthMonth: e.target.value })}
                   className="date-picker"
+                  aria-label="Select birth month"
                 >
                   <option value="">Select Month</option>
                   {monthOptions.map((month) => (
@@ -185,6 +187,7 @@ const Quiz: React.FC = () => {
                   }}
                   className="pincode-field"
                   placeholder="Enter 6-digit pincode"
+                  aria-label="Birth place pincode"
                 />
                 {formData.birthPincode && !validatePincode(formData.birthPincode) && (
                   <div className="error-message">Please enter a valid 6-digit pincode</div>
@@ -205,6 +208,7 @@ const Quiz: React.FC = () => {
                   }}
                   className="pincode-field"
                   placeholder="Enter 6-digit pincode"
+                  aria-label="Work place pincode"
                 />
                 {formData.workPincode && !validatePincode(formData.workPincode) && (
                   <div className="error-message">Please enter a valid 6-digit pincode</div>
@@ -222,7 +226,7 @@ const Quiz: React.FC = () => {
   return (
     <div className="quiz-container">
       <div className="quiz-header">
-        <button className="back-button" onClick={() => navigate(-1)}>←</button>
+        <button className="back-button" onClick={() => navigate(-1)} aria-label="Go back">←</button>
         <h1 className="quiz-title">Gita Quiz</h1>
       </div>
 
@@ -240,6 +244,7 @@ const Quiz: React.FC = () => {
             <button 
               className="nav-button" 
               onClick={handlePrevious}
+              aria-label="Previous page"
             >
               Previous
             </button>
@@ -249,6 +254,7 @@ const Quiz: React.FC = () => {
             onClick={handleNext}
             disabled={!canProceed()}
             style={{ marginLeft: currentPage === 1 ? 'auto' : '0' }}
+            aria-label={currentPage === totalPages ? "Submit quiz" : "Next page"}
           >
             {currentPage === totalPages ? 'Submit' : 'Next'}
           </button>
